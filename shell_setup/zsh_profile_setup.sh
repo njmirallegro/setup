@@ -16,12 +16,12 @@ fi
 # Update and install basics
 if [[ "$platform" == "wsl" ]]; then
   echo "Detected WSL. Installing packages with apt..."
-  sudo apt update
-  sudo apt install -y zsh git curl fzf bat exa ripgrep fd-find lsd docker.io
+  sudo apt update && sudo apt upgrade -y
+  sudo apt install -y zsh git curl fzf bat eza ripgrep fd-find lsd docker.io
 elif [[ "$platform" == "mac" ]]; then
   echo "Detected Mac. Installing packages with brew..."
   brew update
-  brew install zsh git curl fzf bat exa ripgrep fd lsd docker
+  brew install zsh git curl fzf bat eza ripgrep fd lsd docker
   "$(brew --prefix)/opt/fzf/install" --key-bindings --completion --no-update-rc
 fi
 
@@ -80,8 +80,14 @@ chsh -s "$ZSH_PATH"
 cat << 'EOF' >> ~/.zshrc
 
 # --- Modern CLI Tool Aliases ---
-alias ls='exa --icons --group-directories-first'
-# alias ls='lsd'  # alternatively
+if command -v eza &> /dev/null; then
+  alias ls='eza --icons --group-directories-first'
+elif command -v exa &> /dev/null; then
+  alias ls='exa --icons --group-directories-first'
+else
+  alias ls='ls --color=auto'
+fi
+
 alias cat='bat --paging=never'
 alias grep='rg'
 alias find='fd'
@@ -92,4 +98,4 @@ EOF
 echo "\n✅ Setup complete! Restart your terminal or run 'exec zsh' to start using your new setup."
 
 # Additional Instructions:
-echo "\n📦 Docker has been installed. You may need to start the Docker service manually on Linux."
+echo "\n📦 Docker has been installed. You may need to start the Docker service manually on Linux with: sudo service docker start"
