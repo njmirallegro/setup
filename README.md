@@ -9,4 +9,4 @@ One command to install a full modern Zsh + Powerlevel10k + Dev CLI setup on WSL 
 **Run this command:**
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/njmirallegro/setup/main/zsh_profile_setup.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/njmirallegro/workspace_setup/main/shell_setup/zsh_profile_setup.sh)
