@@ -1,0 +1,73 @@
+# ~/.p10k.zsh
+# This is your full Powerlevel10k configuration file
+# Based on the configs you pasted
+
+# Load Powerlevel10k configuration
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# --- Your Customizations Below ---
+
+# Example of customizing segments
+typeset -g POWERLEVEL10K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
+typeset -g POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time time battery load)
+
+typeset -g POWERLEVEL10K_TIME_FORMAT='%D{%I:%M:%S %p}'
+typeset -g POWERLEVEL10K_TIME_FOREGROUND=66
+typeset -g POWERLEVEL10K_TIME_UPDATE_ON_COMMAND=false
+
+typeset -g POWERLEVEL10K_BATTERY_LOW_THRESHOLD=20
+typeset -g POWERLEVEL10K_BATTERY_LOW_FOREGROUND=160
+typeset -g POWERLEVEL10K_BATTERY_DISCONNECTED_FOREGROUND=178
+typeset -g POWERLEVEL10K_BATTERY_{CHARGING,CHARGED}_FOREGROUND=70
+
+typeset -g POWERLEVEL10K_LOAD_WHICH=5
+typeset -g POWERLEVEL10K_LOAD_NORMAL_FOREGROUND=66
+typeset -g POWERLEVEL10K_LOAD_WARNING_FOREGROUND=178
+typeset -g POWERLEVEL10K_LOAD_CRITICAL_FOREGROUND=166
+
+# Example: Display context only when root or ssh
+typeset -g POWERLEVEL10K_CONTEXT_ROOT_FOREGROUND=178
+typeset -g POWERLEVEL10K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=180
+typeset -g POWERLEVEL10K_CONTEXT_FOREGROUND=180
+typeset -g POWERLEVEL10K_CONTEXT_{DEFAULT,SUDO}_{CONTENT,VISUAL_IDENTIFIER}_EXPANSION=
+
+# Vi mode colors
+typeset -g POWERLEVEL10K_VI_COMMAND_MODE_STRING=NORMAL
+typeset -g POWERLEVEL10K_VI_MODE_NORMAL_FOREGROUND=106
+typeset -g POWERLEVEL10K_VI_VISUAL_MODE_STRING=VISUAL
+typeset -g POWERLEVEL10K_VI_MODE_VISUAL_FOREGROUND=68
+typeset -g POWERLEVEL10K_VI_OVERWRITE_MODE_STRING=OVERTYPE
+typeset -g POWERLEVEL10K_VI_MODE_OVERWRITE_FOREGROUND=172
+typeset -g POWERLEVEL10K_VI_MODE_INSERT_FOREGROUND=66
+
+# Ram and Swap
+typeset -g POWERLEVEL10K_RAM_FOREGROUND=66
+typeset -g POWERLEVEL10K_SWAP_FOREGROUND=96
+
+# Disk usage colors
+typeset -g POWERLEVEL10K_DISK_USAGE_NORMAL_FOREGROUND=35
+typeset -g POWERLEVEL10K_DISK_USAGE_WARNING_FOREGROUND=220
+typeset -g POWERLEVEL10K_DISK_USAGE_CRITICAL_FOREGROUND=160
+typeset -g POWERLEVEL10K_DISK_USAGE_WARNING_LEVEL=90
+typeset -g POWERLEVEL10K_DISK_USAGE_CRITICAL_LEVEL=95
+typeset -g POWERLEVEL10K_DISK_USAGE_ONLY_WARNING=false
+
+# Kubernetes, AWS, Azure, GCP settings (minimal config unless active)
+
+# Enable Transient Prompt
+typeset -g POWERLEVEL10K_TRANSIENT_PROMPT=always
+
+# Enable Instant Prompt
+typeset -g POWERLEVEL10K_INSTANT_PROMPT=verbose
+
+# Disable Hot Reload
+typeset -g POWERLEVEL10K_DISABLE_HOT_RELOAD=true
+
+# Default git status icons
+typeset -g POWERLEVEL10K_VCS_MODIFIED_ICON="*"
+typeset -g POWERLEVEL10K_VCS_UNTRACKED_ICON="?"
+typeset -g POWERLEVEL10K_VCS_CLEAN_ICON="✔"
+
+# Other optional features left out to keep prompt fast and clean
+
+# End of p10k configuration
