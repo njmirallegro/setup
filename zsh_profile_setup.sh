@@ -61,7 +61,7 @@ if ! grep -q ".p10k.zsh" ~/.zshrc; then
 fi
 
 # Download custom .p10k.zsh from GitHub
-curl -fsSL https://raw.githubusercontent.com/<your-username>/<your-repo-name>/main/.p10k.zsh -o ~/.p10k.zsh
+curl -fsSL https://raw.githubusercontent.com/njmirallegro/setup/main/.p10k.zsh -o ~/.p10k.zsh
 
 # Set default shell to Zsh
 ZSH_PATH=""
