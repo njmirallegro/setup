@@ -1,0 +1,17 @@
+✅ Nerd Font Terminal Setup: Symbols Nerd Font Mono
+
+If you downloaded this font:
+https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFontMono-Regular.ttf
+
+You must set the following in your VS Code `settings.json` to get Powerlevel10k icons to render:
+
+"terminal.integrated.fontFamily": "Symbols Nerd Font Mono"
+
+🧠 Note:
+- This font only includes symbols (icons) and is intended to supplement a main font.
+- If you want a full monospace font + symbols, use MesloLGS NF or FiraCode Nerd Font instead.
+- Still, using Symbols Nerd Font Mono directly works well for Powerlevel10k icons in VS Code Terminal.
+
+📁 Recommended placement:
+- Add this .ttf file to ~/.local/share/fonts or manually install it
+- Run: `fc-cache -fv` (on Linux/WSL) to refresh font cache
